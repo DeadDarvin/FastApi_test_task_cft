@@ -11,3 +11,8 @@ class TunedModel(BaseModel):
 class ShowEmployeeData(TunedModel):
     current_salary: str
     next_promotion_date: str
+
+
+class Token(TunedModel):
+    access_token: str
+    token_type: str

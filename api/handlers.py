@@ -8,7 +8,7 @@ from sqlalchemy.ext.asyncio import AsyncSession
 
 from .models import ShowEmployeeData
 from db.dals import EmployeeDAL
-from db.session import get_db
+from db.session import get_db_session
 
 
 employee_router = APIRouter()
@@ -30,7 +30,7 @@ async def _get_employee_salary_and_promotion_by_id(
 
 @employee_router.get("/", response_model=ShowEmployeeData)
 async def get_employee_salary_and_promotion_by_id(
-    employee_id: UUID, session: AsyncSession = Depends(get_db)
+    employee_id: UUID, session: AsyncSession = Depends(get_db_session)
 ) -> Optional[ShowEmployeeData]:
     employee_data = await _get_employee_salary_and_promotion_by_id(employee_id, session)
     if employee_data is None:
