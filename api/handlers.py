@@ -28,7 +28,7 @@ async def _get_employee_salary_and_promotion_by_id(
             )
 
 
-@employee_router.get("/", response_model=ShowEmployeeData)
+@employee_router.get("/salary", response_model=ShowEmployeeData)
 async def get_employee_salary_and_promotion_by_id(
     employee_id: UUID, session: AsyncSession = Depends(get_db_session)
 ) -> Optional[ShowEmployeeData]:

@@ -33,6 +33,6 @@ async def login_for_access_token(
             detail="Incorrect username or password",
         )
 
-    access_token: Optional[Token] = get_token(username=employee.email)
+    access_token: Token = get_token(username=employee.email)
 
     return access_token
