@@ -17,7 +17,7 @@ from db.model import Employee
 from db.session import get_db_session
 
 
-oauth2_scheme = OAuth2PasswordBearer(tokenUrl="/auth")
+oauth2_scheme = OAuth2PasswordBearer(tokenUrl="/login")
 
 
 def get_token(username: str) -> Token:

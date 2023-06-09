@@ -30,7 +30,7 @@ async def test_login_handler_positive(client, create_employee_in_database):
         "password": employee_data_for_creation["password"],
     }
 
-    response = client.post("/auth", headers=HEADERS, data=employee_data_for_request)
+    response = client.post("/login", headers=HEADERS, data=employee_data_for_request)
 
     data_from_response = response.json()
 
@@ -78,7 +78,7 @@ async def test_login_handler_invalid_data(
 
     await create_employee_in_database(**employee_data_for_creation)
 
-    response = client.post("/auth", headers=HEADERS, data=data_for_request)
+    response = client.post("/login", headers=HEADERS, data=data_for_request)
 
     data_from_response = response.json()
 
@@ -138,7 +138,7 @@ async def test_login_handler_invalid_data(
 async def test_login_handler_negative(
     client, data_for_request, expected_status_code, expected_detail
 ):
-    response = client.post("/auth", headers=HEADERS, data=data_for_request)
+    response = client.post("/login", headers=HEADERS, data=data_for_request)
 
     data_from_response = response.json()
 

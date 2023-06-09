@@ -13,3 +13,6 @@ stop:
 
 enter:
 	sudo docker exec -it cft_test_app bash
+
+migrate:
+	python create_migrations.py

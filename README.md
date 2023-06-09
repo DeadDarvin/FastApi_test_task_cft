@@ -12,22 +12,15 @@
     ```
     make up
     ```
-4. [Настроить alembic для миграций в БД.](#alembic)
+4.  Провести миграции (Будут созданы таблицы в рабочей и тестовой БД)
+   ```
+    make migrate
+   ```
 5. Запустить проект!
     ```
     python main.py
     ```
 
-## Тесты:
-1. Перейти в tests/.
-2. Запустить конфигурацию pytest: при первом запуске тесты не пройдут.
-Будет создана папка migration и файл alembic.ini. В него нужно поместить
-данные для подключения к тестовой БД:
-   ```ini
-    sqlalchemy.url = postgresql://postgres_test:postgres_test@0.0.0.0:5433/postgres_test
-   ```
-3. Завершить настройку alembic по [инструкции](#alembic).
-4. Запустить конфигурацию pytest. Тесты будут проходить
 
 ## Запуск проекта на сервере:
 1. Клонировать проект.
@@ -52,9 +45,9 @@
     sqlalchemy.url = postgresql://postgres:postgres@db:5432/postgres
     ```
 6. Провести миграции.
-    ```
-    alembic upgrade heads
-    ```
+   ```
+    make migrate
+   ```
 ## <a id="alembic">Инструкция для alembic:</a>
 1. Инициализация:
 ```alembic init migrations```. Будет создана папка с миграциями и конфигурационный файл для alembic.
