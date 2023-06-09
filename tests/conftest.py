@@ -1,6 +1,8 @@
 import asyncio
 import os
 from datetime import date
+from datetime import datetime
+from datetime import timedelta
 from typing import Any
 from typing import Generator
 
@@ -13,6 +15,7 @@ from sqlalchemy.orm import sessionmaker
 from starlette.testclient import TestClient
 
 import constans
+from api.auth.token import create_access_token
 from db.session import get_db_session
 from main import app
 
@@ -125,3 +128,11 @@ async def create_employee_in_database(asyncpg_pool):
             )
 
     return create_employee_in_database
+
+
+def create_test_auth_headers_for_user(email: str, wait_test=False) -> dict[str, str]:
+
+    expire = datetime.utcnow() + timedelta(seconds=1) if wait_test else None
+
+    access_token = create_access_token(email, expire)
+    return {"Authorization": f"Bearer {access_token}"}
