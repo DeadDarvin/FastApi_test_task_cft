@@ -2,7 +2,7 @@ import uvicorn
 from fastapi import FastAPI
 from fastapi.routing import APIRouter
 
-from api.handlers import employee_router
+from api.get_data_handler import employee_router
 from api.login_handler import login_router
 
 # Create instance of the app

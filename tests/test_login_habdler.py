@@ -21,8 +21,8 @@ employee_data_for_creation = {
 
 
 async def test_login_handler_positive(client, create_employee_in_database):
-    #  Preparation
 
+    #  Preparation
     await create_employee_in_database(**employee_data_for_creation)
 
     employee_data_for_request = {
