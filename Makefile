@@ -14,5 +14,8 @@ stop:
 enter:
 	sudo docker exec -it cft_test_app bash
 
+migration:
+	python _create_migrations.py
+
 migrate:
-	python create_migrations.py
+	python _migrate.py
