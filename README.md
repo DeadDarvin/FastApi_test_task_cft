@@ -192,3 +192,6 @@ uvicorn 0.20.0 The lightning-fast ASGI server.
 
 3. Запустить миграцию:
 ```alembic upgrade heads```
+
+## [ТЗ здесь](https://drive.google.com/file/d/1aNctqjsy0IuyqA-d7rsTz4-zwvLhebSD/view)
+## Выполнил Яковенко Лев Аркадьевич
