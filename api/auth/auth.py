@@ -12,10 +12,12 @@ from .hashing import verify_password
 from .token import create_access_token
 from .token import get_email_from_jwt
 from constans import TOKEN_TYPE
+from custom_logger import get_custom_loger
 from db.dals import EmployeeDAL
 from db.model import Employee
 from db.session import get_db_session
 
+logger = get_custom_loger(__name__)
 
 oauth2_scheme = OAuth2PasswordBearer(tokenUrl="/login")
 
@@ -60,8 +62,7 @@ async def get_current_employee_from_token(
 
     email = get_email_from_jwt(token)
     if email is None:
-        #  logger.warning!!!!!!
-        print("!!!!!!INVALID TOKEN!!!!!!!!")
+        logger.warning("Invalid token")
         raise credentials_exception
 
     employee = await _get_employee_by_email_for_auth(email, session)
