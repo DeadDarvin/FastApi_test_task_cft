@@ -25,7 +25,11 @@ username: chetkypacan@yandex.ru, password: 12345)
     ```
     make migrate
     ```
-6. Запустить проект!
+6. Запустить тесты
+    ```
+    pytest
+    ```
+7. Запустить проект!
     ```
     python main.py
     ```
