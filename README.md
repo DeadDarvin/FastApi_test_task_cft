@@ -2,7 +2,7 @@
 ## Запуск проекта на локальной машине:
 1. Клонировать проект.
     ```
-    git clone ...
+    git clone https://gitlab.com/darvin_fastapi/test_task_for_cft.git
     ```
 2. Установить зависимости из requirements.txt
     ```
@@ -33,7 +33,7 @@
 ## Запуск проекта на сервере:
 1. Клонировать проект.
     ```
-    git clone ...
+    git clone https://gitlab.com/darvin_fastapi/test_task_for_cft.git
     ```
 2. Запустить докер-контейнеры с приложением и рабочей БД (все команды написаны из-под sudo)
     ```
